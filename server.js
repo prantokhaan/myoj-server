@@ -13,6 +13,9 @@ app.use(cors()); // Enables CORS for all origins
 app.use(express.json());
 
 // Routes
+app.use("/", (req, res) => {
+  res.send("Welcome to Green API");
+})
 app.use("/users", userRoutes);
 app.use("/contests", require("./routes/contestRoutes"));
 app.use("/admins", require("./routes/adminRoutes"));
